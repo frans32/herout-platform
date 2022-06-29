@@ -10,23 +10,25 @@ export default function Header(props) {
 
   return (
     <div className={props.padded ? styles.padder : ""}>
-      <header className={headerClasses}>
-        <div>
-          <img src="/icons/search.svg" className={styles.block} alt="Soek" />
-        </div>
-        <Link href="/">
-          <a className={styles.block}>
-            <img
-              className={styles.block}
-              src="/assets/herout-outline.svg"
-              alt="Herout"
-            ></img>
-          </a>
-        </Link>
-        <div>
-          <img className={styles.block} src="/icons/menu.svg" />
-        </div>
-      </header>
+      <div className={headerClasses}>
+        <header>
+          <div>
+            <img src="/icons/search.svg" className={styles.block} alt="Soek" />
+          </div>
+          <Link href="/">
+            <a className={styles.block}>
+              <img
+                className={styles.block}
+                src="/assets/herout-outline.svg"
+                alt="Herout"
+              ></img>
+            </a>
+          </Link>
+          <div>
+            <img className={styles.block} src="/icons/menu.svg" />
+          </div>
+        </header>
+      </div>
     </div>
   );
 }

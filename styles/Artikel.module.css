@@ -1,3 +1,115 @@
-.headlineBackground{
-    background: yellow;
+.headline {
+  width: 720px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  padding: 36px 24px;
+}
+
+.headline h1 {
+  font: bold 2.4em/1.2 "Trochut", Outfit, sans-serif;
+  margin: 16px 0;
+  color: #333333;
+}
+
+.headline h2 {
+  font: 2em/1.2 "Trochut", Outfit, sans-serif;
+  margin: 0;
+  color: #6b6b6b;
+}
+
+.headlineCategory {
+  font: 1em/1 "Unica One", Outfit, sans-serif;
+  color: #8c0043;
+}
+
+.headlineAuthor {
+  font: 1em/1 "Unica One", Outfit, sans-serif;
+  color: #444444;
+  margin: 24px 0 8px;
+}
+
+.heroImage {
+  width: 1200px;
+  max-width: 100%;
+  user-select: none;
+  margin: 0 auto;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  font: 1em/24px "Outfit";
+  color: #555555;
+  border-bottom: 1px solid #cccccc;
+}
+.share {
+  display: flex;
+  justify-content: right;
+  min-width: 110px;
+}
+
+.share > img {
+  margin-left: 16px;
+  display: block;
+  height: 24px;
+  cursor: pointer;
+}
+
+.share > img:hover {
+  opacity: 0.8;
+}
+
+.contentContainer {
+  width: 720px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  padding: 24px 32px;
+}
+
+.content {
+  font: 300 18px/1.6 "Outfit", -apple-system, sans-serif;
+  text-align: justify;
+  color: #222;
+}
+
+.content p {
+  margin: 0 0 24px 0;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+  color: #8c0043;
+  margin: 1em 0 0.5em;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.content a {
+  position: relative;
+  color: #1558ea;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 900px) {
+  .headline {
+    padding: 84px 24px;
+  }
+  .headline h1 {
+    font-size: 2.6em;
+  }
+  .headline h2 {
+    font-size: 2.4em;
+  }
+
+  .content {
+    font-size: 20px;
+  }
 }

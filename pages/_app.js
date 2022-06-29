@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 
 import Head from "next/head";
+import Script from "next/script";
 
 function NextApp({ Component, pageProps }) {
   return (
@@ -27,7 +28,7 @@ function NextApp({ Component, pageProps }) {
           crossOrigin="true"
         />
 
-        <script defer src="https://herout.co.za/plausible.js"></script>
+        <Script src="https://herout.co.za/plausible.js" />
       </Head>
       <Component {...pageProps} />
     </>
