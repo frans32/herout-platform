@@ -51,7 +51,11 @@ export default function Home() {
           <h1>Heading 1</h1>
           <p>
             Het ons{" "}
-            <a href="https://google.com/" target="_blank">
+            <a
+              href="https://google.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               hier
             </a>{" "}
             ’n herhaling van wat Stalin in 1945 gedoen het toe hy die verswakte
