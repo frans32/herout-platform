@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 
 import Head from "next/head";
-import * as Plausible from "../public/plausible";
 
 function NextApp({ Component, pageProps }) {
   return (
@@ -27,6 +26,8 @@ function NextApp({ Component, pageProps }) {
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
+
+        <script src="https://herout.co.za/plausible.js" defer></script>
       </Head>
       <Component {...pageProps} />
     </>
