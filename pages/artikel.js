@@ -42,6 +42,7 @@ export default function Home({ post }) {
           <Image
             width={post.imageWidth}
             height={post.imageHeight}
+            priority
             src="/images/oorlog.jpg"
           />
         </div>
