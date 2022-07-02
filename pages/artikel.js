@@ -22,7 +22,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Home({ post }) {
+export default function Artikel({ post }) {
   return (
     <>
       <Header fixed padded />
@@ -43,6 +43,7 @@ export default function Home({ post }) {
             width={post.imageWidth}
             height={post.imageHeight}
             priority
+            sizes="100vw"
             src="/images/oorlog.jpg"
           />
         </div>
