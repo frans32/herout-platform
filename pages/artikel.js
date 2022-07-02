@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import PageViews from "../components/PageViews";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 import imgPlaceholder from "../utils/imgPlaceholder";
 
@@ -23,6 +24,12 @@ export const getStaticProps = async () => {
 };
 
 export default function Artikel({ post }) {
+  let [shareVisible, setShareVisible] = useState(false);
+
+  useEffect(() => {
+    setShareVisible("share" in navigator);
+  }, []);
+
   return (
     <>
       <Header fixed padded />
@@ -54,18 +61,22 @@ export default function Artikel({ post }) {
           <div>Foto: Emma Snyman</div>
           <div className={styles.share}>
             <PageViews page="die-stokperdjie-verg-rots-moed" />
-            <img
-              src="/icons/share.svg"
-              alt="Deel"
-              onClick={async () => {
-                try {
-                  await navigator.share({
-                    text: "Learn web development on MDN!",
-                    url: window.location.href,
-                  });
-                } catch {}
-              }}
-            />
+            {shareVisible ? (
+              <img
+                src="/icons/share.svg"
+                alt="Deel"
+                onClick={async () => {
+                  try {
+                    await navigator.share({
+                      text: "Learn web development on MDN!",
+                      url: window.location.href,
+                    });
+                  } catch {}
+                }}
+              />
+            ) : (
+              <></>
+            )}
           </div>
         </section>
         <main className={styles.content}>
