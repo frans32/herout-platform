@@ -36,6 +36,16 @@
   margin: 0 auto;
 }
 
+.heroBackground {
+  background-position: center;
+  background-size: cover;
+}
+
+.heroBackground > span {
+  display: block !important;
+  backdrop-filter: blur(2vw);
+}
+
 .info {
   display: flex;
   justify-content: space-between;
@@ -111,5 +121,11 @@
 
   .content {
     font-size: 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .heroBackground > span {
+    backdrop-filter: blur(1vw);
   }
 }

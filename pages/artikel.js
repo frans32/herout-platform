@@ -8,8 +8,12 @@ import Image from "next/image";
 import imgPlaceholder from "../utils/imgPlaceholder";
 
 export const getStaticProps = async () => {
-  let base64 = await imgPlaceholder("oorlog.jpg");
-  let post = { base64 };
+  let image = await imgPlaceholder("oorlog.jpg");
+  let post = {
+    imageBlur: image.base64,
+    imageWidth: image.width,
+    imageHeight: image.height,
+  };
 
   return {
     props: {
@@ -31,13 +35,16 @@ export default function Home({ post }) {
       </section>
 
       <section className={styles.heroImage}>
-        <Image
-          width={5618}
-          height={3746}
-          placeholder="blur"
-          blurDataURL={post.base64}
-          src="/images/oorlog.jpg"
-        />
+        <div
+          className={styles.heroBackground}
+          style={{ backgroundImage: `url("${post.imageBlur}")` }}
+        >
+          <Image
+            width={post.imageWidth}
+            height={post.imageHeight}
+            src="/images/oorlog.jpg"
+          />
+        </div>
       </section>
 
       <div className={styles.contentContainer}>
