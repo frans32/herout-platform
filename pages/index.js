@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 
 import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -8,7 +9,9 @@ export default function Home() {
       <div>
         <Header transparent />
         <div style={{ background: "#efefef", height: "450px" }}></div>
-        <img src="/screenshot.png" style={{ width: "100%" }} />
+        <Link href="/artikel">
+          <a>Artikel</a>
+        </Link>
       </div>
       <Head>
         <meta name="theme-color" content="#111" />

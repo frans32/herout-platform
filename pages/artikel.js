@@ -3,12 +3,22 @@ import styles from "../styles/Artikel.module.css";
 import Header from "../components/Header";
 import PageViews from "../components/PageViews";
 
-import Link from "next/link";
 import Image from "next/image";
-import Head from "next/head";
-import useSWR from "swr";
 
-export default function Home() {
+import imgPlaceholder from "../utils/imgPlaceholder";
+
+export const getStaticProps = async () => {
+  let base64 = await imgPlaceholder("oorlog.jpg");
+  let post = { base64 };
+
+  return {
+    props: {
+      post,
+    },
+  };
+};
+
+export default function Home({ post }) {
   return (
     <>
       <Header fixed padded />
@@ -21,7 +31,13 @@ export default function Home() {
       </section>
 
       <section className={styles.heroImage}>
-        <Image width={5618} height={3746} src="/images/oorlog.jpg" />
+        <Image
+          width={5618}
+          height={3746}
+          placeholder="blur"
+          blurDataURL={post.base64}
+          src="/images/oorlog.jpg"
+        />
       </section>
 
       <div className={styles.contentContainer}>
