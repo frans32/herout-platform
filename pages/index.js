@@ -8,7 +8,6 @@ export default function Home() {
     <>
       <div>
         <Header transparent />
-        <div style={{ background: "#efefef", height: "450px" }}></div>
         <Link href="/artikel">
           <a>Artikel</a>
         </Link>

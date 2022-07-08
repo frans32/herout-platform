@@ -1,0 +1,46 @@
+.image {
+  width: 1000px;
+  padding: 0 32px;
+  user-select: none;
+}
+
+.image img {
+  background: #efefef;
+}
+
+.image figcaption {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font: 1rem/1.5 "Outfit", sans-serif;
+  color: #888;
+  padding-top: 12px;
+  text-align: center;
+  transition: color 0.6s ease;
+}
+
+.image span {
+  flex-grow: 1;
+}
+
+@media (min-width: 900px) {
+  .image {
+    margin: 48px auto;
+  }
+
+  .image figcaption span {
+    flex-grow: 0;
+  }
+
+  .image img {
+    transition: transform 0.6s ease;
+  }
+
+  .image:hover img {
+    transform: scale(1.05);
+  }
+
+  .image:hover figcaption {
+    color: #aaa;
+  }
+}
